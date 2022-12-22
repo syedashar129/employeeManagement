@@ -1,24 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './Navbar.js';
+import DataGrids from './DataGrids.js';
+import AddUser from './AddUser.js';
+import Button from '@mui/material/Button';
+import Link from 'react-router-dom';
+
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div>
+      <Router>
+        <Navbar/>
+          <Routes>
+              <Route
+                  exact path="/"
+                  element = {<DataGrids/>}
+              />
+              <Route
+                exact path="/addUser"
+                element = {<AddUser/>}
+              />
+
+          </Routes>
+      </Router>
+
+
+      </div>
   );
 }
 
