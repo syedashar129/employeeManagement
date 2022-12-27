@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import {Button, Link} from "@mui/material";
 import {useParams} from "react-router-dom";
+import "./table.css";
 
 export default function RegGrid(){
     const [employee, setEmployee] = useState([]);

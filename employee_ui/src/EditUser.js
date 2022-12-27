@@ -39,7 +39,7 @@ export default function AddUser (){
     return (
 
         <div>
-            <h1>Edit Employee</h1>
+            <h1 className="text-3xl font-bold underline">Edit Employee</h1>
             <form onSubmit={(e) => onSubmit(e)}>
                 <label htmlFor={"name"}>Name : </label>
 
