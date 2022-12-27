@@ -2,6 +2,9 @@ import React, {useState} from 'react';
 import {Card, Input, Button} from "@mui/material";
 import axios from 'axios';
 import {useNavigate, Link} from 'react-router-dom';
+import Typography from '@mui/material/Typography'
+
+
 
 
 export default function AddUser (){
@@ -28,12 +31,19 @@ export default function AddUser (){
 
     return (
 
-        <div>
-            <h1>Add Employee</h1>
-            <form onSubmit={(e) => onSubmit(e)}>
-            <label htmlFor={"name"}>Name : </label>
+        <div class="center">
+            <Typography variant={"h3"}>Add Employee</Typography>
+            <form
+                onSubmit={(e) => onSubmit(e)}
+                class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+            >
+            <label
+                htmlFor={"name"}
+                class="block text-gray-700 text-sm font-bold mb-2" for="username"
+            >Name : </label>
 
-            <Input
+            <input
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John" required
                 type="text"
                 placeholder={"Enter name"}
                 name={"name"}
@@ -41,8 +51,11 @@ export default function AddUser (){
                 onChange={(e) => onInputChange(e)}
             />
 
-            <label>Username : </label>
-            <Input
+            <label
+                class="block text-gray-700 text-sm font-bold mb-2" for="username"
+            >Username : </label>
+            <input
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John" required
                 type="text"
                 placeholder={"Enter username"}
                 name={"username"}
@@ -50,8 +63,10 @@ export default function AddUser (){
                 onChange={(e) => onInputChange(e)}
             />
 
-            <label>Email : </label>
-            <Input
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="username"
+            >Email : </label>
+            <input
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John" required
                 type="text"
                 placeholder={"Enter email "}
                 name={"email"}
@@ -59,10 +74,14 @@ export default function AddUser (){
                 onChange={(e) => onInputChange(e)}
             />
 
+            <br/>
+
             <Button type="submit" variant="outlined">Submit</Button>
-            <Link to="/">
-                <Button type={"submit"} variant={"outlined"}>Cancel</Button>
-            </Link>
+            <Button
+                color = "error"
+                href={"/"}
+                type={"submit"} variant={"outlined"}
+            >Cancel</Button>
         </form>
         </div>
     )

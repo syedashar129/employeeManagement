@@ -2,8 +2,9 @@ import React from 'react';
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {Button, Link} from "@mui/material";
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import "./table.css";
+import Navbar from "./Navbar";
 
 export default function RegGrid(){
     const [employee, setEmployee] = useState([]);
@@ -26,10 +27,12 @@ export default function RegGrid(){
     }
 
     return(
+
         <div className="flex flex-col">
             <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div className="py-4 inline-block min-w-full sm:px-6 lg:px-8">
                     <div className="overflow-hidden">
+
             <table class="min-w-full text-center">
                 <thead class="border-b bg-gray-800">
                     <tr>
