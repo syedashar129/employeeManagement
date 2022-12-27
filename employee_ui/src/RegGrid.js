@@ -66,13 +66,15 @@ export default function RegGrid(){
                 </tbody>
             </table>
 
-            <Link to="/addUser">
-                <Button
-                    variant="contained"
-                    color="success"
-                    href={"/addUser"}
-                >Add User</Button>
-            </Link>
+            <br/>
+
+            <Button
+                href={"/addUser"}
+                variant="contained"
+                color="success"
+                href={"/addUser"}
+            >Add User</Button>
+
         </div>
         </div>
         </div>

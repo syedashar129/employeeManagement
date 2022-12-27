@@ -33,6 +33,7 @@ export default function AddUser (){
 
         <div class="center">
             <Typography variant={"h3"}>Add Employee</Typography>
+            <br/>
             <form
                 onSubmit={(e) => onSubmit(e)}
                 class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
@@ -77,6 +78,7 @@ export default function AddUser (){
             <br/>
 
             <Button type="submit" variant="outlined">Submit</Button>
+            <div className={"divider"}/>
             <Button
                 color = "error"
                 href={"/"}

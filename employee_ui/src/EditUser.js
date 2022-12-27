@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Card, Input, Button} from "@mui/material";
 import axios from 'axios';
 import {useNavigate, Link, useParams} from 'react-router-dom';
+import Typography from "@mui/material/Typography";
 
 
 export default function AddUser (){
@@ -39,11 +40,13 @@ export default function AddUser (){
     return (
 
         <div>
-            <h1>Edit Employee</h1>
+            <Typography variant={"h3"}>Edit Employee</Typography>
+            <br/>
             <form onSubmit={(e) => onSubmit(e)}>
                 <label htmlFor={"name"}>Name : </label>
 
-                <Input
+                <input
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John" required
                     type="text"
                     placeholder={"Enter name"}
                     name={"name"}
@@ -52,7 +55,8 @@ export default function AddUser (){
                 />
 
                 <label>Username : </label>
-                <Input
+                <input
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John" required
                     type="text"
                     placeholder={"Enter username"}
                     name={"username"}
@@ -61,7 +65,8 @@ export default function AddUser (){
                 />
 
                 <label>Email : </label>
-                <Input
+                <input
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John" required
                     type="text"
                     placeholder={"Enter email "}
                     name={"email"}
@@ -69,8 +74,11 @@ export default function AddUser (){
                     onChange={(e) => onInputChange(e)}
                 />
 
+                <br/>
+
                 <Button type="submit" variant="outlined">Submit</Button>
-                <Button href="/" type={"submit"} variant={"outlined"}>Cancel</Button>
+                <div class={"divider"}/>
+                <Button href="/" type={"submit"} variant={"outlined"} color="error">Cancel</Button>
             </form>
         </div>
     )
