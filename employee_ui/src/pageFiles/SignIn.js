@@ -1,6 +1,6 @@
 import React from 'react';
 import {GoogleButton} from 'react-google-button';
-import {UserAuth} from './AuthContext.js'
+import {UserAuth} from '../firebase/AuthContext.js'
 //
 export default function SignIn (){
     const {googleSignIn} = UserAuth();

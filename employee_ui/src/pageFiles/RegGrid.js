@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import {Button, Link} from "@mui/material";
 import {useNavigate, useParams} from "react-router-dom";
-import "./table.css";
+
 import Navbar from "./Navbar";
 
 export default function RegGrid(){

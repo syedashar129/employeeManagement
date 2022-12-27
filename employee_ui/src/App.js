@@ -1,17 +1,17 @@
 import './App.css';
-import Navbar from './Navbar.js';
+import Navbar from './pageFiles/Navbar.js';
 import DataGrids from './DataGrids.js';
-import AddUser from './AddUser.js';
-import RegGrid from './RegGrid.js';
-import EditUser from './EditUser.js';
-import ViewUser from './ViewEmployee';
-import SignIn from './SignIn.js';
+import AddUser from './pageFiles/AddUser.js';
+import RegGrid from './pageFiles/RegGrid.js';
+import EditUser from './pageFiles/EditUser.js';
+import ViewUser from './pageFiles/ViewEmployee';
+import SignIn from './pageFiles/SignIn.js';
 
 import Button from '@mui/material/Button';
 import Link from 'react-router-dom';
 
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import {AuthContextProvider} from "./AuthContext";
+import {AuthContextProvider} from "./firebase/AuthContext";
 
 function App() {
   return (
