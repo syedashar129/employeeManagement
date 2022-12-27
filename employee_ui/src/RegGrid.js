@@ -26,27 +26,32 @@ export default function RegGrid(){
     }
 
     return(
-        <div>
-            <table>
-                <thead>
+        <div className="flex flex-col">
+            <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                <div className="py-4 inline-block min-w-full sm:px-6 lg:px-8">
+                    <div className="overflow-hidden">
+            <table class="min-w-full text-center">
+                <thead class="border-b bg-gray-800">
                     <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Username</th>
-                        <th>Email</th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">#</th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">Name</th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">Username</th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">Email</th>
+                        <th scope="col" class="text-sm font-medium text-white px-6 py-4">Options</th>
                     </tr>
                 </thead>
                 <tbody>
                 {employee.map((emp, index) =>(
-                        <tr>
-                            <th>{index + 1}</th>
-                            <td>{emp.name}</td>
-                            <td>{emp.username}</td>
-                            <td>{emp.email}</td>
+                        <tr class="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                            <th class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{index + 1}</th>
+                            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">{emp.name}</td>
+                            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">{emp.username}</td>
+                            <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">{emp.email}</td>
                             <td>
                                 <Button href={`/viewUser/${emp.id}`}>View</Button>
                                 <Button href={`/editUser/${emp.id}`}>Edit</Button>
                                 <Button
+                                    color="error"
                                     onClick={() => deleteEmployee(emp.id)}>Delete
                                 </Button>
 
@@ -59,8 +64,15 @@ export default function RegGrid(){
             </table>
 
             <Link to="/addUser">
-                <Button href={"/addUser"}>Add User</Button>
+                <Button
+                    variant="contained"
+                    color="success"
+                    href={"/addUser"}
+                >Add User</Button>
             </Link>
+        </div>
+        </div>
+        </div>
         </div>
     )
 }
