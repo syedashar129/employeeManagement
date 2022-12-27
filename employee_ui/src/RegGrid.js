@@ -2,9 +2,12 @@ import React from 'react';
 import {useEffect, useState} from "react";
 import axios from "axios";
 import {Button, Link} from "@mui/material";
+import {useParams} from "react-router-dom";
 
 export default function RegGrid(){
     const [employee, setEmployee] = useState([]);
+
+    const{id} = useParams();
 
     useEffect(() => {
         loadEmployee();
@@ -14,6 +17,11 @@ export default function RegGrid(){
         const result = await axios.get("http://localhost:8080/employee");
         setEmployee(result.data);
         console.log(result);
+    }
+
+    const deleteEmployee = async (id) => {
+        await axios.delete(`http://localhost:8080/employee/${id}`);
+        loadEmployee();
     }
 
     return(
@@ -35,9 +43,13 @@ export default function RegGrid(){
                             <td>{emp.username}</td>
                             <td>{emp.email}</td>
                             <td>
-                                <Button>View</Button>
-                                <Button>Edit</Button>
-                                <Button>Delete</Button>
+                                <Button href={`/viewUser/${emp.id}`}>View</Button>
+                                <Button href={`/editUser/${emp.id}`}>Edit</Button>
+                                <Button
+                                    onClick={() => deleteEmployee(emp.id)}>Delete
+                                </Button>
+
+
                             </td>
                         </tr>
 
@@ -46,7 +58,7 @@ export default function RegGrid(){
             </table>
 
             <Link to="/addUser">
-                <Button>Add User</Button>
+                <Button href={"/addUser"}>Add User</Button>
             </Link>
         </div>
     )
