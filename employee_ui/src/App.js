@@ -16,8 +16,7 @@ import {AuthContextProvider} from "./firebase/AuthContext";
 function App() {
   return (
       <div>
-
-      <Router>
+      <AuthContextProvider>
         <Navbar/>
           <Routes>
 
@@ -44,8 +43,7 @@ function App() {
               />
           </Routes>
 
-      </Router>
-
+      </AuthContextProvider>
       </div>
   );
 }

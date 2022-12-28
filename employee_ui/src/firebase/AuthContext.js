@@ -17,9 +17,9 @@ export const AuthContextProvider = ({children}) => {
     };
 
     return (
-        <AuthContextProvider value = {{googleSignIn}}>
+        <AuthContext.Provider value = {{googleSignIn}}>
             {children}
-        </AuthContextProvider>
+        </AuthContext.Provider>
     );
 };
 
