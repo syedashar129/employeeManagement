@@ -84,7 +84,7 @@ export default function RegGrid(){
         </div>
             :
                 <div>
-                    <h3>Please sign in .</h3>
+                    <h3>You are logged out ... Please sign in below</h3>
                     <Button href={'/'}>
                         Sign In
                     </Button>

@@ -165,7 +165,8 @@ function Navbar() {
 
                         <MenuItem>
                             <Button textAlign="center"
-                                    onClick={logOut}>
+                                    onClick={logOut}
+                                    href={'/logOut'}>
                                 Logout
                             </Button>
                         </MenuItem>

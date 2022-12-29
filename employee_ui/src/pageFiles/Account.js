@@ -26,7 +26,7 @@ export default function Account () {
                 :
 
                 <div>
-                    <p>Please sign in .</p>
+                    <p>You are logged out ... Please sign in below</p>
                     <br/>
 
                     <Button href={'/'}>

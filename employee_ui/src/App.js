@@ -13,6 +13,7 @@ import Link from 'react-router-dom';
 
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import {AuthContextProvider} from "./firebase/AuthContext";
+import LogOut from "./pageFiles/LogOut";
 
 function App() {
   return (
@@ -24,6 +25,11 @@ function App() {
               <Route
               exact path={'/account'}
               element={<Account/>}
+              />
+
+              <Route
+                  exact path={'/logOut'}
+                  element={<LogOut/>}
               />
 
               <Route

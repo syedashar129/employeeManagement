@@ -60,7 +60,7 @@ export default function ViewEmployee(){
                             <br/>
 
                             <Button
-                                href={"/"}
+                                href={"/home"}
                                 variant={"outlined"}
                             >
                                 Home

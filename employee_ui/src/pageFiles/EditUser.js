@@ -34,7 +34,7 @@ export default function AddUser (){
     const onSubmit = async (e) => {
         e.preventDefault();
         await axios.put(`http://localhost:8080/employee/${id}`, emp)
-        navigate("/");
+        navigate("/home");
     }
 
     return (
@@ -78,7 +78,7 @@ export default function AddUser (){
 
                 <Button type="submit" variant="outlined">Submit</Button>
                 <div class={"divider"}/>
-                <Button href="/" type={"submit"} variant={"outlined"} color="error">Cancel</Button>
+                <Button href="/home" type={"submit"} variant={"outlined"} color="error">Cancel</Button>
             </form>
         </div>
     )

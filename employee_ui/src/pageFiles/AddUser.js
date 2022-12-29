@@ -26,7 +26,7 @@ export default function AddUser (){
     const onSubmit = async (e) => {
         e.preventDefault();
         await axios.post("http://localhost:8080/employee", emp)
-        navigate("/");
+        navigate("/home");
     }
 
     return (
@@ -81,7 +81,7 @@ export default function AddUser (){
             <div className={"divider"}/>
             <Button
                 color = "error"
-                href={"/"}
+                href={"/home"}
                 type={"submit"} variant={"outlined"}
             >Cancel</Button>
         </form>
