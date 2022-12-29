@@ -5,10 +5,12 @@ import {Button, Link} from "@mui/material";
 import {useNavigate, useParams} from "react-router-dom";
 
 import Navbar from "./Navbar";
+import {UserAuth} from "../firebase/AuthContext";
 
 export default function RegGrid(){
-    const [employee, setEmployee] = useState([]);
+    const {user, logOut} = UserAuth();
 
+    const [employee, setEmployee] = useState([]);
     const{id} = useParams();
 
     useEffect(() => {
@@ -27,7 +29,8 @@ export default function RegGrid(){
     }
 
     return(
-
+        <div>
+            {user?.displayName ?
         <div className="flex flex-col">
             <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div className="py-4 inline-block min-w-full sm:px-6 lg:px-8">
@@ -78,6 +81,15 @@ export default function RegGrid(){
         </div>
         </div>
         </div>
+        </div>
+            :
+                <div>
+                    <h3>Please sign in .</h3>
+                    <Button href={'/'}>
+                        Sign In
+                    </Button>
+                </div>
+            }
         </div>
     )
 }

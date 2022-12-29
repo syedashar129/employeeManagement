@@ -5,6 +5,7 @@ import AddUser from './pageFiles/AddUser.js';
 import RegGrid from './pageFiles/RegGrid.js';
 import EditUser from './pageFiles/EditUser.js';
 import ViewUser from './pageFiles/ViewEmployee';
+import Account from './pageFiles/Account.js'
 import SignIn from './pageFiles/SignIn.js';
 
 import Button from '@mui/material/Button';
@@ -21,12 +22,17 @@ function App() {
           <Routes>
 
               <Route
-                exact path = "/signIn"
+              exact path={'/account'}
+              element={<Account/>}
+              />
+
+              <Route
+                exact path = "/"
                 element=<SignIn/>
               />
 
               <Route
-                  exact path="/"
+                  exact path="/home"
                   element = {<RegGrid/>}
               />
               <Route
